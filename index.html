@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Latest compiled and minified CSS for bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script>
+    <script src="table.js" defer></script>
+    <link href="stylesheet.css" rel="stylesheet" />
+    <title>HTML & CSS Cheat Sheet</title>
+</head>
+<body id="body">
+    <header>
+    <h1>HTML Table Reference</h1>
+    <h2>Table Tags </h2>
+    </header>
+    <div class="container" id="app">
+        <table id="table">
+            <thead>
+              <tr>
+                <th v-for="col in columns" v-on:click="sortTable(col)">{{col}}
+                  <div class="arrow" v-if="col == sortColumn" v-bind:class="ascending ? 'arrow_up' : 'arrow_down'"></div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in tableRows">
+                <td v-for="col in columns">{{row[col]}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!--Table for the attributes-->
+          <header>
+            <h2>Table Attributes</h2>
+            </header>
+          <table id="table">
+            <thead>
+              <tr>
+                <th v-for="col in columns" v-on:click="sortTable(col)">{{col}}
+                  <div class="arrow" v-if="col == sortColumn" v-bind:class="ascending ? 'arrow_up' : 'arrow_down'"></div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in tableRows">
+                <td v-for="col in columns">{{row[col]}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</body>
+</html>
