@@ -19,38 +19,36 @@
     <h2>Table Tags </h2>
     </header>
     <div class="container" id="app">
-        <table id="table">
-            <thead>
-              <tr>
-                <th v-for="col in columns" v-on:click="sortTable(col)">{{col}}
-                  <div class="arrow" v-if="col == sortColumn" v-bind:class="ascending ? 'arrow_up' : 'arrow_down'"></div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="row in tableRows">
-                <td v-for="col in columns">{{row[col]}}</td>
-              </tr>
-            </tbody>
-          </table>
+      <table id="table">
+        <thead>
+          <tr>
+            <th v-for="col in columns">{{col}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="row in tableRows">
+            <td v-for="col in columns">{{row[col]}}</td>
+          </tr>
+        </tbody>
+      </table>
+
           <!--Table for the attributes-->
           <header>
             <h2>Table Attributes</h2>
             </header>
-          <table id="table">
-            <thead>
-              <tr>
-                <th v-for="col in columns" v-on:click="sortTable(col)">{{col}}
-                  <div class="arrow" v-if="col == sortColumn" v-bind:class="ascending ? 'arrow_up' : 'arrow_down'"></div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="row in tableRows">
-                <td v-for="col in columns">{{row[col]}}</td>
-              </tr>
-            </tbody>
-          </table>
+            <table id="table">
+              <thead>
+                <tr>
+                  <th v-for="columns in attributeColumns">{{columns}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="row in attributeRows">
+                  <td v-for="columns in attributeColumns">{{row[columns]}}</td>
+                </tr>
+              </tbody>
+            </table>
+
     </div>
 </body>
 </html>
